@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import contactSlice from '../feature/contact/contactSlice';
+import navSlice from '../feature/navbar/navSlice';
 
 export const store = configureStore({
   reducer: {
-    contact:contactSlice
+    contact:contactSlice,
+    navbar:navSlice
   },
 });
 
