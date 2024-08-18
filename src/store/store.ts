@@ -6,7 +6,7 @@ export const store = configureStore({
   reducer: {
     contact:contactSlice,
     navbar:navSlice
-  },
+  }, // all  slice would be pass here .
 });
 
 export type RootState = ReturnType<typeof store.getState>;

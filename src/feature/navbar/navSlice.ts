@@ -9,10 +9,10 @@ export const navSlice = createSlice({
     reducers:{
         toggleNavbar:state=>{
                state.isNav=!state.isNav
-        },
+        }, // toggling the buttton where its update isNav
         setPageName: (state, action: PayloadAction<string>) => {
-            state.page = action.payload;
-        }
+            state.page = action.payload; 
+        }  //this function used to set the page num
     }
 })
 

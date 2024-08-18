@@ -1,20 +1,40 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-export const contactSlice = createSlice({
-  name: 'contact',
-  initialState: {
-    value: 0,
-  },
+interface Contact {
+  id: string;
+  firstName: string;
+  lastName: string;
+  status: "active" | "inactive";
+}
+
+interface ContactState {
+  contacts: Contact[];
+}
+
+const initialState: ContactState = {
+  contacts: [],
+};
+
+const contactSlice = createSlice({
+  name: "contacts",
+  initialState,
   reducers: {
-    increment: state => {
-      state.value += 1;
+    addContact: (state, action: PayloadAction<Contact>) => {
+      state.contacts.push(action.payload);
+    }, // simple one to push data when added 
+    updateContact: (state, action: PayloadAction<Contact>) => {
+      const index = state.contacts.findIndex(contact => contact.id === action.payload.id);
+      if (index !== -1) {
+        state.contacts[index] = action.payload;
+      }
     },
-    decrement: state => {
-      state.value -= 1;
+    // finding the selected contact data and edit this on updtating on the basis of its payload.
+    deleteContact: (state, action: PayloadAction<string>) => {
+      state.contacts = state.contacts.filter(contact => contact.id !== action.payload);
     },
+    // filtering out the selected contacts
   },
 });
 
-export const { increment, decrement } = contactSlice.actions;
-
+export const { addContact, updateContact, deleteContact } = contactSlice.actions;
 export default contactSlice.reducer;

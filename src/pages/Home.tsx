@@ -1,8 +1,11 @@
 import React from 'react'
+import ContactsPage from '../components/Contact'
 
 const Home = () => {
   return (
-    <div className='text-[#000] text-[40px]'>Home</div>
+    <React.Fragment>
+      <ContactsPage/>
+    </React.Fragment>
   )
 }
 

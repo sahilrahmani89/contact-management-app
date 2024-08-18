@@ -17,9 +17,9 @@ const Navbar = () => {
     } else  {
       dispatch(setPageName(location.pathname.substring(1).toUpperCase()));
     }
-  },[location,page])
+  },[location,page]) // this function used to update page state on the basis of its route 
   return (
-    <nav className="bg-gray-800 text-white h-16 flex items-center justify-between px-4 w-full fixed top-0 z-50">
+    <nav style={{zIndex:999}} className="bg-gray-800 text-white h-16 flex items-center justify-between px-4 w-full fixed top-0 ">
       <img onClick={()=>dispatch(toggleNavbar())} src={menu} alt='menu' className="text-white h-6 w-6 cursor-pointer">
      
       </img>

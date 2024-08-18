@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import Dashboard from './pages/Dashboard';
@@ -9,6 +9,7 @@ const App: React.FC = () => {
 
   return (
     <>
+    {/* this is layout of page  */}
       <Navbar />
       <div className="flex">
         <Sidebar />

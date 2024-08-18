@@ -7,7 +7,7 @@ import contactIcon from '../assets/icons/contact.png';
 
 const Sidebar = () => {
   const isOpen = useSelector((state: RootState) => state.navbar.isNav);
-
+// responsive navbar on the basis of boolean of isOpen
   return (
     <>
       <div
